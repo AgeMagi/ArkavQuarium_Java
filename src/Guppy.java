@@ -44,10 +44,6 @@ public class Guppy extends Ikan {
     return waktukoin;
   }
 
-  public static int getMakanNaikLevel() {
-    return makannaiklevel;
-  }
-
   @Override
   public int getLevel() {
     return level;
@@ -60,11 +56,6 @@ public class Guppy extends Ikan {
   public void setWaktuKoin(double waktukoin) {
     this.waktukoin = waktukoin;
   }
-
-  public static void setMakanNaikLevel(int makannaiklevel) {
-    Guppy.makannaiklevel = makannaiklevel;
-  }
-
 
   public void setLevel(int level) {
     this.level = level;

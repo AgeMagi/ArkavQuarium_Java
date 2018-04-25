@@ -21,14 +21,8 @@ public class Akuarium extends JPanel {
   public static int SCREEN_WIDTH = 853;
   public static int SCREEN_HEIGHT = 640;
   public static double PI = 3.14159265;
-  public static int RADIUS_PENGAMBILAN = 5;
-  public static int LOSE = 0;
-  public static int WIN = 1;
-  public static int LOAD = 0;
-  public static int NEW = 1;
   public static int HOME = 0;
   public static int PLAY = 1;
-  public static int FINISH = 2;
 
   private static final String BACKGROUND_IMAGE = "image/Aquarium6.jpg";
   private static final String TOOLBAR_IMAGE = "image/tabatas.png";
@@ -41,8 +35,6 @@ public class Akuarium extends JPanel {
 
   private BufferedImage defaultImage;
   private Map<String, BufferedImage> images;
-  private int status;
-  private long fps;
   private JFrame jframe;
   private static long now;
   private static long start;
@@ -72,8 +64,6 @@ public class Akuarium extends JPanel {
 
     this.defaultImage = ImageIO.read(new File(defaultObjectImagePath));
     this.images = new HashMap<>();
-
-    this.fps = 1000000000L / 128L;
 
     ikan = new List<Ikan>();
     makananikan = new List<MakananIkan>();
@@ -119,8 +109,6 @@ public class Akuarium extends JPanel {
 
         mouseX -= 291;
         mouseY -= 105;
-
-        System.out.println(mouseX + " , " + mouseY);
 
         if (mainmenu) {
           if ((mouseX <= 773 && mouseX >= 619) && (mouseY <= 471 && mouseY >= 324)) {
@@ -346,8 +334,6 @@ public class Akuarium extends JPanel {
    * Untuk melakukan inisiasi pada Permainan.
    */
   public void startAkuarium() {
-    status = HOME;
-
     playAkuarium();
   }
 
@@ -357,9 +343,6 @@ public class Akuarium extends JPanel {
   public void playAkuarium() {
     Random rand = new Random();
 
-    status = PLAY;
-
-    long lastFrameStart = System.nanoTime();
     start = System.nanoTime();
 
     initDefault();
