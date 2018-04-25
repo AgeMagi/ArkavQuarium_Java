@@ -1,8 +1,9 @@
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+
 import org.junit.Test;
-
-import java.util.Random;
-
-import static org.junit.Assert.*;
 
 public class IkanTest {
 
@@ -73,8 +74,8 @@ public class IkanTest {
   @Test
   public void setPointTujuan() {
     Ikan test = new Piranha(30, 30, 3.14, 100);
-    Random rand = new Random();
-    Posisi tespos = new Siput(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
+    Posisi tespos = new Siput(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
+            Main.rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
     test.setPointTujuan(tespos);
     assertEquals(test.getPointTujuan().getX(), tespos.getX(), 1e-10);
     assertEquals(test.getPointTujuan().getY(), tespos.getY(), 1e-10);
