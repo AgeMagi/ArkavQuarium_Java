@@ -1,1 +1,1 @@
-332.0 640.0 392.0 257.0 image/siputkanan.png
+393.0 640.0 83.0 603.0 image/siputkanan.png
