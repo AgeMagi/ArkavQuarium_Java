@@ -6,6 +6,11 @@ import controller.Posisi;
 import java.util.Random;
 import tools.List;
 
+/**
+ * Kelas Guppy ialah turunan dari kelas Ikan yang
+ * merupakan ikan normal dan mempunyai beberapa attribut
+ * tambahan dan mempunyai fungsi tambahan.
+ */
 public class Guppy extends Ikan {
   private final int waktukeluarkankoin = 5;
   private double waktukoin;

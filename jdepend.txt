@@ -1,0 +1,333 @@
+--------------------------------------------------
+- Package: Default
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 3
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    Main
+
+Depends Upon:
+    controller
+    java.io
+    java.lang
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: benda
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 3
+    Ce: 2
+
+    A: 0
+    I: 0.4
+    D: 0.6
+
+Abstract Classes:
+
+Concrete Classes:
+    benda.Koin
+    benda.MakananIkan
+
+Depends Upon:
+    controller
+    java.lang
+
+Used By:
+    binatang
+    controller
+    test
+
+--------------------------------------------------
+- Package: binatang
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 4
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 5
+
+    A: 0
+    I: 0.71
+    D: 0.29
+
+Abstract Classes:
+
+Concrete Classes:
+    binatang.Guppy
+    binatang.Ikan
+    binatang.Piranha
+    binatang.Siput
+
+Depends Upon:
+    benda
+    controller
+    java.lang
+    java.util
+    tools
+
+Used By:
+    controller
+    test
+
+--------------------------------------------------
+- Package: controller
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 3
+    Abstract Classes: 3
+
+    Ca: 4
+    Ce: 13
+
+    A: 0.5
+    I: 0.76
+    D: 0.26
+
+Abstract Classes:
+    controller.BendaAkuarium
+    controller.Movement
+    controller.Posisi
+
+Concrete Classes:
+    controller.Akuarium
+    controller.Akuarium$1
+    controller.Player
+
+Depends Upon:
+    benda
+    binatang
+    java.awt
+    java.awt.event
+    java.awt.image
+    java.io
+    java.lang
+    java.net
+    java.security
+    java.util
+    javax.imageio
+    javax.swing
+    tools
+
+Used By:
+    Default
+    benda
+    binatang
+    test
+
+--------------------------------------------------
+- Package: java.awt
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.awt.event
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.awt.image
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.net
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.security
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.imageio
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.swing
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: junit.framework
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.junit
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: test
+--------------------------------------------------
+
+Stats:
+    Total Classes: 9
+    Concrete Classes: 9
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 9
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    test.GuppyTest
+    test.IkanTest
+    test.KoinTest
+    test.ListTest
+    test.MakananIkanTest
+    test.NodeTest
+    test.PiranhaTest
+    test.PlayerTest
+    test.SiputTest
+
+Depends Upon:
+    benda
+    binatang
+    controller
+    java.io
+    java.lang
+    java.util
+    junit.framework
+    org.junit
+    tools
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: tools
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 3
+    Ce: 1
+
+    A: 0
+    I: 0.25
+    D: 0.75
+
+Abstract Classes:
+
+Concrete Classes:
+    tools.List
+    tools.Node
+
+Depends Upon:
+    java.lang
+
+Used By:
+    binatang
+    controller
+    test
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+Default
+    |
+    |-> controller
+    |   binatang
+    |-> controller
+
+benda
+    |
+    |-> controller
+    |   binatang
+    |-> controller
+
+binatang
+    |
+    |   controller
+    |-> binatang
+
+controller
+    |
+    |   binatang
+    |-> controller
+
+test
+    |
+    |-> binatang
+    |   controller
+    |-> binatang
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+Default,1,0,0,3,0,1,0,1
+benda,2,0,3,2,0,0.4,0.6,1
+binatang,4,0,2,5,0,0.71,0.29,1
+controller,6,3,4,13,0.5,0.76,0.26,1
+java.awt,0,0,1,0,0,0,1,1
+java.awt.event,0,0,1,0,0,0,1,1
+java.awt.image,0,0,1,0,0,0,1,1
+java.io,0,0,3,0,0,0,1,1
+java.lang,0,0,6,0,0,0,1,1
+java.net,0,0,1,0,0,0,1,1
+java.security,0,0,1,0,0,0,1,1
+java.util,0,0,3,0,0,0,1,1
+javax.imageio,0,0,1,0,0,0,1,1
+javax.swing,0,0,1,0,0,0,1,1
+junit.framework,0,0,1,0,0,0,1,1
+org.junit,0,0,1,0,0,0,1,1
+test,9,0,0,9,0,1,0,1
+tools,2,0,3,1,0,0.25,0.75,1

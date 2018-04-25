@@ -24,8 +24,13 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
+
 import tools.List;
 
+/**
+ * Kelas Akuarium adalah kelas yang mempunyai relasi has-a
+ * yang mana mempunyai atribut berupa objek-objek yang ada.
+ */
 public class Akuarium extends JPanel {
   public static int SCREEN_WIDTH = 853;
   public static int SCREEN_HEIGHT = 640;
@@ -69,9 +74,7 @@ public class Akuarium extends JPanel {
    * @throws IOException .
    */
   public Akuarium(String defaultObjectImagePath) throws IOException {
-    Random rand = new Random();
-
-    this.defaultImage = ImageIO.read(new File(defaultObjectImagePath));
+    this.defaultImage = ImageIO.read(new File(ABS_PATH + PARENT_FOLDER + defaultObjectImagePath));
     this.images = new HashMap<>();
 
     ikan = new List<Ikan>();

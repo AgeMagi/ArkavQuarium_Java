@@ -6,6 +6,17 @@ import controller.BendaAkuarium;
 import controller.Posisi;
 import tools.List;
 
+/**
+ * Kelas ikan adalah kelas yang merupakan derived kelas dari benda
+ * akuarium dan merupakan base kelas dari piranha dan guppy.
+ * Ikan sendiri punya atribut berupa koin yang akan di produksi
+ * waktu ikan tahan kenyang.
+ * serta waktu yang akan mempertahankan ikan hidup sampai mati
+ * ketika sudah masuk fase lapar.
+ * Juga memiliki atribut berupa waktumakan yang berrati menghitung
+ * setiap kali ikan makan untuk perubahan level dari ikan.
+ * serta type yang berisi string yang menyimpan type dari ikan sendiri.
+ */
 public class Ikan extends BendaAkuarium {
   private boolean lapar;
   private final int tahankenyang = 9;

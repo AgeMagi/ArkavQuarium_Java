@@ -4,8 +4,6 @@ package controller;
  * kelas abstrak BendaAkuarium.
  * merupakan kelas yang mengimplementasi interface posisi, movement
  */
-
-
 public abstract class BendaAkuarium implements Posisi, Movement {
   /**
    * merupakan kelas yang memiliki atribut posisi arah, kecepatan, dan gambar.

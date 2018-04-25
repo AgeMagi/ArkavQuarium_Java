@@ -3,6 +3,10 @@ package benda;
 import controller.Akuarium;
 import controller.BendaAkuarium;
 
+/**
+ * Kelas koin ialah kelas turunan dari benda akuarium
+ * yang mempunyai atribut nilai dari koin tersebut.
+ */
 public class Koin extends BendaAkuarium {
   private int nilai;
   private final int level;
