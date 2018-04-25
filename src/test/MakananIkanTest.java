@@ -1,5 +1,8 @@
+package test;
+
 import static org.junit.Assert.assertEquals;
 
+import benda.MakananIkan;
 import org.junit.Test;
 
 public class MakananIkanTest {

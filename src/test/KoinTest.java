@@ -1,7 +1,9 @@
+package test;
+
 import static org.junit.Assert.assertEquals;
 
+import benda.Koin;
 import org.junit.Test;
-
 
 public class KoinTest {
 

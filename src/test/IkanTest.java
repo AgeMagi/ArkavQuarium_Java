@@ -1,9 +1,19 @@
-import static junit.framework.TestCase.assertTrue;
+package test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
+import benda.MakananIkan;
+import binatang.Guppy;
+import binatang.Ikan;
+import binatang.Piranha;
+import binatang.Siput;
+import controller.Akuarium;
+import controller.Posisi;
 import org.junit.Test;
+import tools.List;
 
 public class IkanTest {
 
@@ -74,8 +84,8 @@ public class IkanTest {
   @Test
   public void setPointTujuan() {
     Ikan test = new Piranha(30, 30, 3.14, 100);
-    Posisi tespos = new Siput(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
-            Main.rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
+    Posisi tespos = new Siput(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH),
+            Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
     test.setPointTujuan(tespos);
     assertEquals(test.getPointTujuan().getX(), tespos.getX(), 1e-10);
     assertEquals(test.getPointTujuan().getY(), tespos.getY(), 1e-10);

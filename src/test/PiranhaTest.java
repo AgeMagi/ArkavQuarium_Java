@@ -1,4 +1,11 @@
+package test;
+
 import static org.junit.Assert.assertEquals;
+
+import binatang.Guppy;
+import binatang.Ikan;
+import binatang.Piranha;
+import tools.List;
 
 public class PiranhaTest {
 

@@ -1,4 +1,10 @@
+package binatang;
+
+import benda.MakananIkan;
+import controller.Akuarium;
+import controller.Posisi;
 import java.util.Random;
+import tools.List;
 
 public class Guppy extends Ikan {
   private final int waktukeluarkankoin = 5;

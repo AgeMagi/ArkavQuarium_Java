@@ -1,6 +1,2 @@
-423.0 640.0 image/makananikan
-306.0 634.0 image/makananikan
-268.0 425.0 image/makananikan
-314.0 390.0 image/makananikan
-193.0 380.0 image/makananikan
-408.0 362.0 image/makananikan
+268.0 545.0 image/makananikan
+193.0 502.0 image/makananikan

@@ -1,3 +1,9 @@
+package binatang;
+
+import controller.Akuarium;
+import controller.Posisi;
+import tools.List;
+
 /**
  * Kelas piranha merupakan derived class dari ikan yang
  * pada dasarnya dapat bergerak dan makan.
@@ -63,19 +69,19 @@ public class Piranha extends Ikan {
 
     if (Akuarium.time_since_start() - this.getWaktuRandom()
             >= WAKTU_RANDOM_PIRANHA) {
-      Posisi tujuan = new Siput(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
-              Main.rand.nextInt(Akuarium.SCREEN_HEIGHT)
-                      + JARAK_PIRANHA, Main.NOL, Main.NOL);
+      Posisi tujuan = new Siput(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH),
+              Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT)
+                      + JARAK_PIRANHA, 0, 0);
       this.setPointTujuan(tujuan);
       this.setWaktuRandom(Akuarium.time_since_start());
     }
     this.setArah(Math.atan2(this.getPointTujuan().getY()
             - this.getY(), this.getPointTujuan().getX()
             - this.getX()));
-    if (this.getArah() * Main.SETENGAH_LINGKARAN / Akuarium.PI
-            > -Main.SEPEREMPAT_LINGKARAN && this.getArah()
-            * Main.SETENGAH_LINGKARAN / Akuarium.PI
-            < Main.SEPEREMPAT_LINGKARAN) {
+    if (this.getArah() * 180 / Akuarium.PI
+            > -90 && this.getArah()
+            * 180 / Akuarium.PI
+            < 90) {
       this.setImage(daftargambar[1]);
     } else {
       this.setImage(daftargambar[0]);
@@ -88,9 +94,9 @@ public class Piranha extends Ikan {
     if (Math.abs(this.getX() - this.getPointTujuan().getX())
             < RADIUS_PENGAMBILAN && Math.abs(this.getY()
             - this.getPointTujuan().getY()) < RADIUS_PENGAMBILAN) {
-      Posisi tujuan = new Siput(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
-              Main.rand.nextInt(Akuarium.SCREEN_HEIGHT)
-                      + JARAK_PIRANHA, Main.NOL, Main.NOL);
+      Posisi tujuan = new Siput(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH),
+              Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT)
+                      + JARAK_PIRANHA, 0, 0);
       this.setPointTujuan(tujuan);
     }
     if ((int) (Akuarium.time_since_start()
@@ -105,14 +111,14 @@ public class Piranha extends Ikan {
    * @return Int.
    */
   public int cariIkanTerdekat(final List<Ikan> listikan) {
-    double min = Main.MAX_NUMBER;
+    double min = 999999;
     int terdekat = -1;
 
     if (Akuarium.time_since_start() - this.getWaktuRandom()
             >= WAKTU_RANDOM_PIRANHA) {
-      Posisi tujuan = new Siput(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
-              Main.rand.nextInt(Akuarium.SCREEN_HEIGHT) + JARAK_PIRANHA,
-              Main.NOL, Main.NOL);
+      Posisi tujuan = new Siput(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH),
+              Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT) + JARAK_PIRANHA,
+              0, 0);
       this.setPointTujuan(tujuan);
       this.setWaktuRandom(Akuarium.time_since_start());
     }
@@ -134,10 +140,10 @@ public class Piranha extends Ikan {
       this.setArah(Math.atan2(listikan.getIdx(terdekat).getY()
               - this.getY(), listikan.getIdx(terdekat).getX()
               - this.getX()));
-      if (this.getArah() * Main.SETENGAH_LINGKARAN / Math.PI
-              > -Main.SEPEREMPAT_LINGKARAN && this.getArah()
-              * Main.SETENGAH_LINGKARAN / Math.PI
-              < Main.SEPEREMPAT_LINGKARAN) {
+      if (this.getArah() * 180 / Math.PI
+              > -90 && this.getArah()
+              * 180 / Math.PI
+              < 90) {
         this.setImage(daftargambar[GAMBAR_KE3]);
       } else {
         this.setImage(daftargambar[2]);
@@ -165,8 +171,8 @@ public class Piranha extends Ikan {
       this.setY(this.getY() + this.getKecepatan() * Math.sin(this.getArah()) * 0.0001);
       if (Math.abs(this.getX() - this.getPointTujuan().getX()) < 5
               && Math.abs(this.getY() - this.getPointTujuan().getY()) < 5) {
-        Posisi tujuan = new Siput(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
-                Main.rand.nextInt(Akuarium.SCREEN_HEIGHT) + 100, 0, 0);
+        Posisi tujuan = new Siput(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH),
+                Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT) + 100, 0, 0);
         this.setPointTujuan(tujuan);
       }
     }
@@ -174,3 +180,4 @@ public class Piranha extends Ikan {
     return -1;
   }
 }
+

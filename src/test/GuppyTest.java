@@ -1,7 +1,12 @@
+package test;
+
 import static org.junit.Assert.assertEquals;
 
+import benda.MakananIkan;
+import binatang.Guppy;
+import binatang.Ikan;
 import org.junit.Test;
-
+import tools.List;
 
 public class GuppyTest {
 

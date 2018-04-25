@@ -1,6 +1,12 @@
+package test;
+
 import static org.junit.Assert.assertEquals;
 
+import benda.Koin;
+import benda.MakananIkan;
+import binatang.Siput;
 import org.junit.Test;
+import tools.List;
 
 public class SiputTest {
 
@@ -42,6 +48,6 @@ public class SiputTest {
     koin.add(k2);
     koin.add(k3);
     koin.add(k4);
-    System.out.println(((Siput) p).cariKoin(koin));
+    System.out.println(p.cariKoin(koin));
   }
 }

@@ -1,3 +1,5 @@
+package controller;
+
 /**
  * Kelas Posisi ialah kelas yang menyimpan posisi suatu benda di akuarium.
  */
@@ -33,3 +35,4 @@ public interface Posisi {
    */
   double hitungjarak(Posisi x);
 }
+

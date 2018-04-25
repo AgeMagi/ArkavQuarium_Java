@@ -1,3 +1,5 @@
+package controller;
+
 /**
  * Kelas ini Untuk mengatur attribut user yang memainkan game.
  */
@@ -22,7 +24,7 @@ public class Player {
    */
   public Player() {
     this.jumlahkoin = KOIN_AWAL;
-    this.banyaktelur = Main.NOL;
+    this.banyaktelur = 0;
   }
 
   /**
@@ -97,3 +99,4 @@ public class Player {
     banyaktelur++;
   }
 }
+

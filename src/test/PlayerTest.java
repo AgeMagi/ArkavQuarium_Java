@@ -1,5 +1,8 @@
+package test;
+
 import static org.junit.Assert.assertEquals;
 
+import controller.Player;
 import org.junit.Test;
 
 public class PlayerTest {

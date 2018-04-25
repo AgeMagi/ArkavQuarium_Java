@@ -1,4 +1,7 @@
-import java.lang.Math;
+package benda;
+
+import controller.Akuarium;
+import controller.BendaAkuarium;
 
 public class Koin extends BendaAkuarium {
   private int nilai;
@@ -52,3 +55,4 @@ public class Koin extends BendaAkuarium {
     }
   }
 }
+

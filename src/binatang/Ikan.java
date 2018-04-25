@@ -1,4 +1,10 @@
-import java.util.Random;
+package binatang;
+
+import benda.MakananIkan;
+import controller.Akuarium;
+import controller.BendaAkuarium;
+import controller.Posisi;
+import tools.List;
 
 public class Ikan extends BendaAkuarium {
   private boolean lapar;
@@ -27,8 +33,8 @@ public class Ikan extends BendaAkuarium {
     this.type = type;
     waktumakan = Akuarium.time_since_start();
 
-    pointtujuan = new Siput(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
-            Main.rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
+    pointtujuan = new Siput(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH),
+            Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
   }
 
   public boolean getLapar() {
@@ -83,8 +89,6 @@ public class Ikan extends BendaAkuarium {
    * Untuk melakukan gerakan dari Ikan.
    */
   public void gerak() {
-    Random rand = new Random();
-
     this.setArah(Math.atan2(pointtujuan.getY() - this.getY(), pointtujuan.getX() - this.getX()));
     if (this.getArah() * 180 / Math.PI > (-90) && this.getArah() * 180 / Math.PI < 90) {
       this.setImage("ikankanan.png");
@@ -95,8 +99,8 @@ public class Ikan extends BendaAkuarium {
     this.setY(this.getY() + this.getKecepatan() * Math.sin(this.getArah()) * 0.0001);
     if (Math.abs(this.getY() - pointtujuan.getX()) < 0.1
             && Math.abs(this.getY() - pointtujuan.getY()) < 0.1) {
-      pointtujuan.setX(rand.nextInt(Akuarium.SCREEN_WIDTH));
-      pointtujuan.setY(rand.nextInt(Akuarium.SCREEN_HEIGHT));
+      pointtujuan.setX(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH));
+      pointtujuan.setY(Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT));
     }
     if (Akuarium.time_since_start() - (int) waktumakan == tahankenyang) {
       lapar = true;
@@ -148,4 +152,5 @@ public class Ikan extends BendaAkuarium {
   public void setWaktuKoin(double x) {
   }
 }
+
 

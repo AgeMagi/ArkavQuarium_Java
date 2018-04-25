@@ -1,3 +1,5 @@
+package controller;
+
 /**
  * kelas abstrak BendaAkuarium.
  * merupakan kelas yang mengimplementasi interface posisi, movement
@@ -102,3 +104,4 @@ public abstract class BendaAkuarium implements Posisi, Movement {
     return Math.sqrt(a + b);
   }
 }
+

@@ -1,5 +1,14 @@
+package binatang;
+
+import benda.Koin;
+import benda.MakananIkan;
+import controller.Akuarium;
+import controller.BendaAkuarium;
+import controller.Posisi;
+import tools.List;
+
 /**
- * Kelas siput ialah turunan dari kelas Benda Akuarium yang merupakan
+ * Kelas siput ialah turunan dari kelas benda Akuarium yang merupakan
  * benda yang mengumpulkan koin.
  */
 public class Siput extends BendaAkuarium {
@@ -48,12 +57,12 @@ public class Siput extends BendaAkuarium {
    * Constructor.
    */
   public Siput() {
-    super(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
+    super(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH),
             Akuarium.SCREEN_HEIGHT, 0, KECEPATAN_SIPUT);
-    pointtujuan = new MakananIkan(Main.rand.nextInt(Akuarium.SCREEN_WIDTH),
-            Main.rand.nextInt(Akuarium.SCREEN_HEIGHT));
-    pointtujuan.setX(Main.rand.nextInt(Akuarium.SCREEN_WIDTH));
-    pointtujuan.setY(Main.rand.nextInt(Akuarium.SCREEN_HEIGHT));
+    pointtujuan = new MakananIkan(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH),
+            Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT));
+    pointtujuan.setX(Akuarium.rand.nextInt(Akuarium.SCREEN_WIDTH));
+    pointtujuan.setY(Akuarium.rand.nextInt(Akuarium.SCREEN_HEIGHT));
     this.setImage("image/siputkanan.png");
   }
 
@@ -91,7 +100,7 @@ public class Siput extends BendaAkuarium {
             && (Math.abs(this.getX() - pointtujuan.getX())
             > RADIUS_GERAKAN)) {
       this.setX(this.getX() + this.getKecepatan() * RATIO_KECEPATAN);
-    } else if ((this.getX() != Main.NOL) && (Math.abs(this.getX()
+    } else if ((this.getX() != 0) && (Math.abs(this.getX()
             - pointtujuan.getX()) > RADIUS_GERAKAN)) {
       this.setX(this.getX() - this.getKecepatan() * RATIO_KECEPATAN);
     }
@@ -102,7 +111,7 @@ public class Siput extends BendaAkuarium {
    * @param listkoin .
    * @return int.
    */
-  int cariKoin(final List<Koin> listkoin) {
+  public int cariKoin(final List<Koin> listkoin) {
     boolean kanansiput = true;
     boolean ketemudasar = false;
     int terdekat = -1;
@@ -175,3 +184,4 @@ public class Siput extends BendaAkuarium {
     return -1;
   }
 }
+

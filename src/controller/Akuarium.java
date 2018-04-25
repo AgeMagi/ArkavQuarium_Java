@@ -1,3 +1,11 @@
+package controller;
+
+import benda.Koin;
+import benda.MakananIkan;
+import binatang.Guppy;
+import binatang.Ikan;
+import binatang.Piranha;
+import binatang.Siput;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
@@ -16,21 +24,22 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
+import tools.List;
 
 public class Akuarium extends JPanel {
   public static int SCREEN_WIDTH = 853;
   public static int SCREEN_HEIGHT = 640;
   public static double PI = 3.14159265;
-  public static int HOME = 0;
-  public static int PLAY = 1;
+  public static Random rand = new Random();
 
   private static final String BACKGROUND_IMAGE = "image/Aquarium6.jpg";
   private static final String TOOLBAR_IMAGE = "image/tabatas.png";
   private static final String MAINMENU_IMAGE = "image/mainmenu.png";
 
-  public static final String parentFolder = "../../../";
+  private static final String PARENT_FOLDER = "../../../";
 
-  private final String abspath = Akuarium.class.getProtectionDomain().getCodeSource().getLocation()
+  private static final String ABS_PATH =
+          Akuarium.class.getProtectionDomain().getCodeSource().getLocation()
           .getPath().replaceAll("%20", " ");
 
   private BufferedImage defaultImage;
@@ -104,11 +113,8 @@ public class Akuarium extends JPanel {
       @Override
       public void mouseClicked(MouseEvent e) {
         super.mouseClicked(e);
-        double mouseX = e.getLocationOnScreen().getX();
-        double mouseY = e.getLocationOnScreen().getY();
-
-        mouseX -= 291;
-        mouseY -= 105;
+        double mouseX = e.getX();
+        double mouseY = e.getY();
 
         if (mainmenu) {
           if ((mouseX <= 773 && mouseX >= 619) && (mouseY <= 471 && mouseY >= 324)) {
@@ -136,8 +142,8 @@ public class Akuarium extends JPanel {
               if (player.getJumlahkoin() < 100) {
                 kurangkoin = true;
               } else {
-                Ikan newguppy = new Guppy(Main.rand.nextInt(SCREEN_WIDTH),
-                        Main.rand.nextInt(SCREEN_HEIGHT), 0, 40000);
+                Ikan newguppy = new Guppy(rand.nextInt(SCREEN_WIDTH),
+                        rand.nextInt(SCREEN_HEIGHT), 0, 40000);
                 ikan.add(newguppy);
                 player.kurangkanKoin(100);
                 kurangkoin = false;
@@ -146,8 +152,8 @@ public class Akuarium extends JPanel {
               if (player.getJumlahkoin() < 200) {
                 kurangkoin = true;
               } else {
-                Ikan newpiranha = new Piranha(Main.rand.nextInt(SCREEN_WIDTH),
-                        Main.rand.nextInt(SCREEN_HEIGHT), 0, 60000);
+                Ikan newpiranha = new Piranha(rand.nextInt(SCREEN_WIDTH),
+                        rand.nextInt(SCREEN_HEIGHT), 0, 60000);
                 ikan.add(newpiranha);
                 player.kurangkanKoin(200);
                 kurangkoin = false;
@@ -456,12 +462,12 @@ public class Akuarium extends JPanel {
     } else if (menang) {
       g.drawImage(readImage(BACKGROUND_IMAGE), 0, 0, null);
       g.drawImage(readImage(TOOLBAR_IMAGE), 0, 0, null);
-      g.drawImage(readImage(abspath + parentFolder + "image/congratulations.png"),
+      g.drawImage(readImage(ABS_PATH + PARENT_FOLDER + "image/congratulations.png"),
               (SCREEN_WIDTH - 743) / 2, (SCREEN_HEIGHT - 551) / 2, null);
     } else if (kalah) {
       g.drawImage(readImage(BACKGROUND_IMAGE), 0, 0, null);
       g.drawImage(readImage(TOOLBAR_IMAGE), 0, 0, null);
-      g.drawImage(readImage(abspath + parentFolder + "image/gameover.png"),
+      g.drawImage(readImage(ABS_PATH + PARENT_FOLDER + "image/gameover.png"),
               (SCREEN_WIDTH - 853) / 2, (SCREEN_HEIGHT - 245) / 2, null);
     } else {
       g.drawImage(readImage(BACKGROUND_IMAGE), 0, 0, null);
@@ -486,13 +492,13 @@ public class Akuarium extends JPanel {
       }
 
       if (player.getBanyaktelur() == 0) {
-        g.drawImage(readImage(abspath + parentFolder + "image/telor1.png"),
+        g.drawImage(readImage(ABS_PATH + PARENT_FOLDER + "image/telor1.png"),
                 645 - 70 / 2, 45 - 64 / 2, null);
       } else if (player.getBanyaktelur() == 1) {
-        g.drawImage(readImage(abspath + parentFolder + "image/telor2.png"),
+        g.drawImage(readImage(ABS_PATH + PARENT_FOLDER + "image/telor2.png"),
                 645 - 70 / 2, 45 - 64 / 2, null);
       } else if (player.getBanyaktelur() == 2) {
-        g.drawImage(readImage(abspath + parentFolder + "image/telor3.png"),
+        g.drawImage(readImage(ABS_PATH + PARENT_FOLDER + "image/telor3.png"),
                 645 - 70 / 2, 45 - 64 / 2, null);
       }
 
@@ -510,7 +516,7 @@ public class Akuarium extends JPanel {
         g.drawString(player.getJumlahkoin() + "", 752, 93);
       }
 
-      g.drawImage(readImage(abspath + parentFolder + "image/save.png"),
+      g.drawImage(readImage(ABS_PATH + PARENT_FOLDER + "image/save.png"),
               63 - 80 / 2, 580 - 80 / 2, null);
     }
   }
